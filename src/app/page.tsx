@@ -1,65 +1,110 @@
-import Image from "next/image";
+import NarrativeSection from "@/components/NarrativeSection";
+import Button from "@/components/Button";
+import CalloutPanel from "@/components/CalloutPanel";
+import CredentialStrip from "@/components/CredentialStrip";
+import Hero from "@/components/Hero";
+import Section from "@/components/Section";
+import StrengthsBrief from "@/components/StrengthsBrief";
+import GroundingGrid from "@/components/GroundingGrid";
+import ServiceGrid from "@/components/ServiceGrid";
+import {
+  clientOutcomes,
+  coreServices,
+  groundedIn,
+  howWeWork,
+  narrativeCapabilities,
+  site,
+  whoWeServe,
+  whyClientsChooseBrief,
+} from "@/lib/content";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Hero
+        title="Governance-Forward Advisory for Small Federal Contractors"
+        subtitle="Strengthening the operating structures, decision-making systems, and institutional readiness small businesses need to compete and grow in the federal marketplace."
+        primaryCta={{ label: "Book a Consultation", href: "/contact#consultation" }}
+        secondaryCta={{ label: "View Services", href: "/services" }}
+      />
+
+      <CredentialStrip />
+
+      <Section
+        id="narrative"
+        band="surface"
+        size="spacious"
+        title="How I Work"
+        subtitle="Governance-forward advisory for leaders navigating federal growth, compliance, and institutional change."
+      >
+        <NarrativeSection
+          capabilities={narrativeCapabilities}
+          whoWeServe={whoWeServe}
+          howWeWork={howWeWork}
+          clientOutcomes={clientOutcomes}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </Section>
+
+      <Section
+        headerWide
+        title="We Build the Infrastructure Behind Federal Growth"
+        subtitle={`${site.name} helps small federal contractors build the governance, operating models, and organizational discipline required to win and deliver federal work.`}
+      >
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.9fr] lg:items-start lg:gap-12">
+          <GroundingGrid items={groundedIn} />
+          <div className="flex flex-col gap-8 lg:sticky lg:top-24">
+            <CalloutPanel
+              variant="inline"
+              lines={[
+                "We don't write proposals.",
+                "We build the institutional maturity that makes winning possible.",
+              ]}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <Button href="/about" variant="secondary">
+              Learn How We Work
+            </Button>
+          </div>
         </div>
-      </main>
-    </div>
+      </Section>
+
+      <Section
+        band="surface"
+        title="Advisory Built for Federal Growth"
+        subtitle="Six practices that strengthen governance, readiness, and delivery discipline."
+      >
+        <ServiceGrid services={coreServices} />
+        <div className="mt-[var(--space-stack)]">
+          <Button href="/services" variant="teal">
+            View All Services
+          </Button>
+        </div>
+      </Section>
+
+      <Section
+        size="compact"
+        title="Advisory That Reduces Risk and Strengthens Readiness"
+        subtitle="Executive-level clarity grounded in federal, prime-contractor, and organizational effectiveness experience."
+      >
+        <StrengthsBrief
+          lead={whyClientsChooseBrief.lead}
+          groups={whyClientsChooseBrief.groups}
+          supporting="The through-line across every engagement — institutional maturity, not one-off fixes."
+        />
+      </Section>
+
+      <Section
+        band="teal"
+        size="cta"
+        title="Strengthen Your Federal Strategy"
+        subtitle="Let's build the governance, structure, and readiness your business needs to compete with confidence."
+      >
+        <div className="flex flex-wrap gap-4">
+          <Button href="/contact#consultation">Book a Consultation</Button>
+          <Button href="/services" variant="secondary">
+            Explore Services
+          </Button>
+        </div>
+      </Section>
+    </>
   );
 }

@@ -1,26 +1,150 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #1a2744;
+  --navy-light: #2a3d66;
+  --navy-dark: #0f1a2e;
+  --brand-gold: #b8860b;
+  --brand-gold-light: #d4a843;
+  --gold: #e8c468;
+  --teal: #1a7a8c;
+  --teal-dark: #0f5a68;
+  --teal-light: #3aa3b5;
+  --surface: #f0eeea;
+  --background: #faf9f8;
+  --foreground: oklch(0.22 0.04 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 260);
+  --primary: oklch(0.22 0.04 260);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.96 0.008 95);
+  --secondary-foreground: oklch(0.22 0.04 260);
+  --muted: oklch(0.96 0.008 95);
+  --muted-foreground: oklch(0.38 0.025 260);
+  --accent: oklch(0.94 0.03 200);
+  --accent-foreground: oklch(0.28 0.07 200);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0.01 95);
+  --input: oklch(0.9 0.01 95);
+  --ring: oklch(0.48 0.08 200);
+  --radius: 0.625rem;
+  --space-section-y: clamp(3.5rem, 4vw + 1.75rem, 7rem);
+  --space-section-y-compact: clamp(2.75rem, 3vw + 1.25rem, 4.5rem);
+  --space-section-y-spacious: clamp(4.25rem, 5.5vw + 1.5rem, 8.5rem);
+  --space-section-y-cta: clamp(2.5rem, 2.5vw + 1.25rem, 4rem);
+  --space-block: clamp(2rem, 2vw + 1rem, 3rem);
+  --space-stack: clamp(1.25rem, 1vw + 0.75rem, 2rem);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-navy-dark: var(--navy-dark);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-light: var(--brand-gold-light);
+  --color-gold: var(--gold);
+  --color-teal: var(--teal);
+  --color-teal-dark: var(--teal-dark);
+  --color-teal-light: var(--teal-light);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-muted: var(--muted-foreground);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-source-serif);
+  --shadow-card: 0 1px 2px rgba(26, 39, 68, 0.04);
+  --shadow-card-hover: 0 2px 6px rgba(26, 39, 68, 0.06);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-input: var(--input);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-source-serif), Georgia, serif;
+  text-wrap: balance;
+}
+
+.panel {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.section-dark {
+  background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 100%);
+  color: white;
+}
+
+.band-surface {
+  background: var(--surface);
+}
+
+.band-teal {
+  background: color-mix(in oklch, var(--teal) 6%, var(--background));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 }
