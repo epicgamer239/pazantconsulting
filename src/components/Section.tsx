@@ -17,10 +17,10 @@ interface SectionProps {
 }
 
 const sectionSizeClasses: Record<SectionSize, string> = {
-  default: "py-[var(--space-section-y)]",
-  compact: "py-[var(--space-section-y-compact)]",
-  spacious: "py-[var(--space-section-y-spacious)]",
-  cta: "py-[var(--space-section-y-cta)]",
+  default: "section-padding",
+  compact: "section-padding-compact",
+  spacious: "section-padding-spacious",
+  cta: "section-padding-cta",
 };
 
 const headerSizeClasses: Record<SectionSize, string> = {

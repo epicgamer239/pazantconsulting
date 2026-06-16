@@ -16,7 +16,7 @@ export default function NarrativeSection({
   clientOutcomes,
 }: NarrativeSectionProps) {
   return (
-    <div className="flex flex-col gap-[var(--space-block)]">
+    <div className="flex flex-col gap-8 lg:gap-10">
       <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
         <ContentCard padding="none" className="lg:col-span-5">
           <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-auto lg:min-h-[480px]">

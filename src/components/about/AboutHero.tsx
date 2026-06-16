@@ -32,7 +32,7 @@ export default function AboutHero({ credentials }: AboutHeroProps) {
             </div>
           </div>
 
-          <div className="panel flex flex-col justify-center bg-primary px-6 py-8 text-primary-foreground lg:col-span-5 lg:px-8 lg:py-10">
+          <div className="panel-navy flex flex-col justify-center px-6 py-8 lg:col-span-5 lg:px-8 lg:py-10">
             <p className="text-sm font-semibold text-brand-gold-light">
               Led by {site.founder}
             </p>

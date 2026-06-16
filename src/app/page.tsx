@@ -73,7 +73,7 @@ export default function HomePage() {
         subtitle="Six practices that strengthen governance, readiness, and delivery discipline."
       >
         <ServiceGrid services={coreServices} />
-        <div className="mt-[var(--space-stack)]">
+        <div className="mt-8">
           <Button href="/services" variant="teal">
             View All Services
           </Button>

@@ -19,7 +19,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
   const [featured, ...rest] = services;
 
   return (
-    <div className="flex flex-col gap-[var(--space-stack)]">
+    <div className="flex flex-col gap-6">
       {featured && (
         <ContentCard padding="none" className="overflow-hidden">
           {featured.href ? (

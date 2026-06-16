@@ -104,6 +104,30 @@ h3 {
   background: var(--card);
 }
 
+.panel-navy {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in oklch, var(--navy-light) 65%, transparent);
+  background: var(--navy);
+  color: white;
+}
+
+.section-padding {
+  padding-block: var(--space-section-y);
+}
+
+.section-padding-compact {
+  padding-block: var(--space-section-y-compact);
+}
+
+.section-padding-spacious {
+  padding-block: var(--space-section-y-spacious);
+}
+
+.section-padding-cta {
+  padding-block: var(--space-section-y-cta);
+}
+
 .section-dark {
   background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 100%);
   color: white;
