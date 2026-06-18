@@ -9,9 +9,9 @@ export default function CredentialStrip() {
     <div className="border-b border-border bg-surface">
       <div className="mx-auto grid max-w-6xl sm:grid-cols-3 sm:divide-x sm:divide-border">
         {credentials.map(({ label, detail }) => (
-          <div key={label} className="border-b border-border px-6 py-7 last:border-b-0 sm:border-b-0 lg:px-8">
-            <p className="font-semibold text-foreground">{label}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{detail}</p>
+          <div key={label} className="border-b border-border px-6 py-8 last:border-b-0 sm:border-b-0 lg:px-8">
+            <p className="text-base font-semibold text-foreground md:text-lg">{label}</p>
+            <p className="mt-2 text-sm text-muted-foreground md:text-base">{detail}</p>
           </div>
         ))}
       </div>

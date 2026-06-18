@@ -21,7 +21,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
   return (
     <div className="flex flex-col gap-6">
       {featured && (
-        <ContentCard padding="none" className="overflow-hidden">
+        <ContentCard padding="none" interactive={!!featured.href} className="overflow-hidden">
           {featured.href ? (
             <Link
               href={featured.href}
@@ -37,26 +37,52 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {rest.map((service) => (
-          <ContentCard key={service.title} className="flex h-full flex-col">
-            <h3 className="font-serif text-base font-semibold leading-snug text-foreground md:text-lg">
-              {service.title}
-            </h3>
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-              {service.description}
-            </p>
-            {service.href && (
+          <ContentCard
+            key={service.title}
+            interactive={!!service.href}
+            className="flex h-full flex-col"
+          >
+            {service.href ? (
               <Link
                 href={service.href}
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-teal transition-colors hover:text-teal-dark"
+                className="group -m-6 flex h-full flex-col p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 md:-m-8 md:p-8"
               >
-                View service details
-                <ArrowRight className="h-4 w-4" aria-hidden />
+                <ServiceCardContent service={service} linked />
               </Link>
+            ) : (
+              <ServiceCardContent service={service} />
             )}
           </ContentCard>
         ))}
       </div>
     </div>
+  );
+}
+
+function ServiceCardContent({ service, linked = false }: { service: Service; linked?: boolean }) {
+  return (
+    <>
+      <h3 className="font-serif text-lg font-semibold leading-snug text-foreground md:text-xl">
+        {service.title}
+      </h3>
+      <p className="mt-3 flex-1 text-base leading-relaxed text-muted-foreground">
+        {service.description}
+      </p>
+      {service.href && (
+        <span
+          className={cn(
+            "mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-teal",
+            linked && "group-hover:text-teal-dark"
+          )}
+        >
+          View service details
+          <ArrowRight
+            className={cn("h-4 w-4", linked && "transition-transform group-hover:translate-x-0.5")}
+            aria-hidden
+          />
+        </span>
+      )}
+    </>
   );
 }
 

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
+import PageShell from "@/components/PageShell";
+import ContactHashScroll from "@/components/contact/ContactHashScroll";
 import ContactPanel from "@/components/contact/ContactPanel";
-import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -11,17 +12,19 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="flex min-h-[calc(100dvh-4.5rem)] flex-col lg:min-h-[calc(100dvh-5rem)]">
-      <PageIntro
-        slim
-        compact
-        title="Get in touch"
-        subtitle={`${site.name} · ${site.founder}. Selective, governance-forward advisory for small federal contractors navigating growth, compliance, and institutional readiness.`}
-      />
-
-      <section className="flex flex-1 border-b border-border bg-background">
-        <ContactPanel />
-      </section>
-    </div>
+    <PageShell id="consultation" snap className="page-shell-contact">
+      <ContactHashScroll />
+      <div className="flex min-h-0 flex-1 flex-col gap-5 md:gap-6">
+        <PageIntro
+          embedded
+          slim
+          srOnlyLabel="Contact"
+          title="Strengthening Organizations for Lasting Success"
+        />
+        <div className="flex min-h-0 flex-1 flex-col">
+          <ContactPanel embedded />
+        </div>
+      </div>
+    </PageShell>
   );
 }

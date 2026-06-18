@@ -12,7 +12,7 @@ export default function ServicesFoundation({ items }: ServicesFoundationProps) {
         {highlights.map((item) => (
           <p
             key={item}
-            className="px-6 py-6 text-sm leading-relaxed text-foreground md:px-7 md:py-7 md:text-[0.9375rem]"
+            className="px-6 py-7 text-base leading-relaxed text-foreground md:px-7 md:py-8 md:text-[1.0625rem] md:leading-[1.65]"
           >
             {item}
           </p>
@@ -24,7 +24,7 @@ export default function ServicesFoundation({ items }: ServicesFoundationProps) {
           {supporting.map((item) => (
             <li
               key={item}
-              className="px-6 py-4 text-sm leading-relaxed text-muted-foreground md:px-8 md:py-5 md:text-[0.9375rem]"
+              className="px-6 py-5 text-base leading-relaxed text-muted-foreground md:px-8 md:py-6 md:leading-[1.65]"
             >
               {item}
             </li>

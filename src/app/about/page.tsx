@@ -4,6 +4,7 @@ import Section from "@/components/Section";
 import FounderProfile from "@/components/about/FounderProfile";
 import ApproachPillars from "@/components/about/ApproachPillars";
 import DeliverablesMission from "@/components/about/DeliverablesMission";
+import { founderCredentials, site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -37,41 +38,39 @@ const deliverables = [
   "Prepare for AI-era federal requirements",
 ];
 
-const credentials = [
-  { label: "Senior SBA Advisor", detail: "Presidential Appointment" },
-  { label: "Former SBLO", detail: "Major Federal Prime" },
-  { label: "MIT Sloan & CSAIL", detail: "AI Strategy Certificate" },
-];
-
 export default function AboutPage() {
   return (
     <>
-      <AboutHero credentials={credentials} />
+      <AboutHero />
+
+      <Section title="About Pazant Consulting Services">
+        <div className="max-w-2xl space-y-8">
+          <p className="text-pretty text-lg leading-[1.8] text-muted-foreground md:text-xl md:leading-[1.75]">
+            {site.name} is a selective, governance-forward advisory practice that helps small
+            federal contractors build the internal systems, decision-making structures, and
+            organizational discipline required to grow in the federal marketplace.
+          </p>
+          <p className="text-lg leading-relaxed text-foreground md:text-xl">
+            We work with founders and executive teams who want clarity, structure, and readiness
+            — <span className="font-semibold text-brand-gold">not noise.</span>
+          </p>
+        </div>
+      </Section>
 
       <Section
         id="founder"
         band="surface"
-        size="spacious"
-        className="scroll-mt-24"
-        title="Alecia Pazant Hall"
+        title={site.founderFullName}
         subtitle="Director-level Organizational Effectiveness & Strategic Operations Leader"
       >
-        <FounderProfile grounding={founderGrounding} />
+        <FounderProfile credentials={founderCredentials} grounding={founderGrounding} />
       </Section>
 
-      <Section
-        size="compact"
-        title="A Different Kind of Advisory Practice"
-        subtitle="Strategic, governance-forward, and built for leaders making consequential decisions."
-      >
+      <Section title="A Different Kind of Advisory Practice" subtitle="Our approach is:">
         <ApproachPillars items={approach} />
       </Section>
 
-      <Section
-        band="teal"
-        title="Institutional Maturity That Enables Federal Growth"
-        subtitle="We help organizations build readiness across governance, BD, compliance, and alignment."
-      >
+      <Section band="teal" size="cta" title="Institutional Maturity That Enables Federal Growth" subtitle="We help organizations:">
         <DeliverablesMission items={deliverables} />
       </Section>
     </>

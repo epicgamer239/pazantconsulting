@@ -1,53 +1,23 @@
 import Button from "@/components/Button";
-import { site } from "@/lib/content";
+import ScrollToButton from "@/components/ScrollToButton";
 
-interface AboutHeroProps {
-  credentials: { label: string; detail: string }[];
-}
-
-export default function AboutHero({ credentials }: AboutHeroProps) {
+export default function AboutHero() {
   return (
-    <section className="border-b border-border">
+    <section className="border-b border-border bg-surface section-padding snap-start">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid lg:min-h-[min(420px,52vh)] lg:grid-cols-12 lg:gap-8 lg:py-10">
-          <div className="flex flex-col justify-center py-10 lg:col-span-7 lg:py-8">
-            <h1 className="max-w-2xl text-balance font-serif text-[clamp(2rem,4vw,2.875rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-foreground">
-              A selective advisory practice for federal contractors
-            </h1>
-            <div className="mt-4 h-1 w-12 rounded-sm bg-brand-gold" aria-hidden />
-            <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-              {site.name} helps small federal contractors build the internal systems,
-              decision-making structures, and organizational discipline required to grow in
-              the federal marketplace.
-            </p>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground">
-              For founders and executive teams who want clarity, structure, and readiness —{" "}
-              <span className="font-semibold text-brand-gold">not noise.</span>
-            </p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Button href="#founder">Meet the Founder</Button>
-              <Button href="/services" variant="secondary">
-                View Services
-              </Button>
-            </div>
-          </div>
-
-          <div className="panel-navy flex flex-col justify-center px-6 py-8 lg:col-span-5 lg:px-8 lg:py-10">
-            <p className="text-sm font-semibold text-brand-gold-light">
-              Led by {site.founder}
-            </p>
-            <p className="mt-4 font-serif text-xl font-semibold leading-snug md:text-2xl">
-              Director-level organizational effectiveness and federal program insight.
-            </p>
-            <dl className="mt-8 divide-y divide-white/15 border-t border-white/15">
-              {credentials.map(({ label, detail }) => (
-                <div key={label} className="py-4 first:pt-5">
-                  <dt className="font-semibold text-white">{label}</dt>
-                  <dd className="mt-1 text-sm text-white/75">{detail}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+        <h1 className="max-w-3xl text-balance font-serif text-[clamp(2rem,4vw,2.875rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-foreground">
+          A Governance-Forward Approach to Federal Growth
+        </h1>
+        <div className="mt-4 h-1 w-12 rounded-sm bg-brand-gold" aria-hidden />
+        <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg md:leading-[1.75]">
+          Grounded in federal experience, prime-contractor insight, and organizational
+          effectiveness leadership.
+        </p>
+        <div className="mt-9 flex flex-wrap gap-4">
+          <ScrollToButton targetId="founder">Meet the Founder</ScrollToButton>
+          <Button href="/services" variant="secondary">
+            Explore Our Services
+          </Button>
         </div>
       </div>
     </section>

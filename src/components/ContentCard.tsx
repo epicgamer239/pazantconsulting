@@ -4,13 +4,21 @@ interface ContentCardProps {
   children: React.ReactNode;
   className?: string;
   padding?: "default" | "none";
+  /** Subtle lift on hover — use only when the card is clickable. */
+  interactive?: boolean;
 }
 
-export function ContentCard({ children, className, padding = "default" }: ContentCardProps) {
+export function ContentCard({
+  children,
+  className,
+  padding = "default",
+  interactive = false,
+}: ContentCardProps) {
   return (
     <div
       className={cn(
         "panel",
+        interactive && "panel-hover",
         padding === "default" && "p-6 md:p-8",
         className
       )}

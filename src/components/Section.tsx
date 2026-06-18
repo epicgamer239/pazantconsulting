@@ -14,6 +14,8 @@ interface SectionProps {
   bleed?: boolean;
   size?: SectionSize;
   headerWide?: boolean;
+  viewport?: boolean;
+  snap?: boolean;
 }
 
 const sectionSizeClasses: Record<SectionSize, string> = {
@@ -41,19 +43,29 @@ export default function Section({
   bleed = false,
   size = "default",
   headerWide = false,
+  viewport = false,
+  snap = false,
 }: SectionProps) {
   return (
     <section
       id={id}
       className={cn(
+        "reveal-in",
         sectionSizeClasses[size],
+        viewport && "section-viewport",
+        snap && "snap-start",
         dark && "section-dark",
         band === "teal" && "band-teal",
         band === "surface" && "band-surface",
         className
       )}
     >
-      <div className={cn(!bleed && "mx-auto max-w-6xl px-6 lg:px-8")}>
+      <div
+        className={cn(
+          !bleed && "mx-auto max-w-6xl px-6 lg:px-8",
+          viewport && "flex w-full flex-1 flex-col justify-center"
+        )}
+      >
         {(title || subtitle) && (
           <header
             className={cn(

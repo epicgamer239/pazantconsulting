@@ -18,7 +18,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-card shadow-[0_1px_3px_rgba(26,39,68,0.06)]">
+    <header className="z-sticky sticky top-0 border-b border-border/80 bg-card shadow-header">
       <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-6 lg:h-20 lg:px-8">
         <Link
           href="/"
@@ -51,6 +51,7 @@ export default function Header() {
             );
           })}
           <Button
+            nativeButton={false}
             render={<Link href="/contact#consultation" />}
             size="lg"
             className="ml-4 h-11 px-6"
@@ -89,7 +90,7 @@ export default function Header() {
             </nav>
             <Separator className="my-4" />
             <div className="px-4">
-              <Button render={<Link href="/contact#consultation" />} className="w-full" size="lg">
+              <Button nativeButton={false} render={<Link href="/contact#consultation" />} className="w-full" size="lg">
                 Book a Consultation
               </Button>
             </div>
