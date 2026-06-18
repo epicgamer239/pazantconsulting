@@ -2,6 +2,7 @@
   "name": "pazantconsulting",
   "version": "0.1.0",
   "private": true,
+  "description": "Marketing site for Pazant Consulting Services",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
