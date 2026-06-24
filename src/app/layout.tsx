@@ -24,7 +24,11 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Governance-forward advisory for small federal contractors. Strengthening operating structures, decision-making systems, and institutional readiness.",
+    "Governance-forward advisory for mission-driven organizations. Strengthening operating structures, decision-making systems, and institutional readiness.",
+  icons: {
+    icon: "/pazant-consulting.png",
+    apple: "/pazant-consulting.png",
+  },
 };
 
 export default function RootLayout({

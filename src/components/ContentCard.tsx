@@ -1,8 +1,7 @@
 import { cn } from "@/lib/utils";
 
-interface ContentCardProps {
+interface ContentCardProps extends React.ComponentProps<"div"> {
   children: React.ReactNode;
-  className?: string;
   padding?: "default" | "none";
   /** Subtle lift on hover — use only when the card is clickable. */
   interactive?: boolean;
@@ -13,6 +12,7 @@ export function ContentCard({
   className,
   padding = "default",
   interactive = false,
+  ...props
 }: ContentCardProps) {
   return (
     <div
@@ -22,6 +22,7 @@ export function ContentCard({
         padding === "default" && "p-6 md:p-8",
         className
       )}
+      {...props}
     >
       {children}
     </div>

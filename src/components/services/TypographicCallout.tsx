@@ -7,7 +7,7 @@ interface TypographicCalloutProps {
 
 export default function TypographicCallout({ lines, className }: TypographicCalloutProps) {
   return (
-    <figure className={cn("max-w-md border-t-2 border-brand-gold pt-8", className)}>
+    <figure className={cn("max-w-md border-t-2 border-brand-gold bg-brand-gold/5 px-5 py-8", className)}>
       <blockquote>
         <p className="font-serif text-[clamp(1.375rem,2.75vw,2rem)] font-semibold leading-snug text-foreground">
           {lines[0]}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { navLinks, site } from "@/lib/content";
@@ -18,17 +19,27 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="z-sticky sticky top-0 border-b border-border/80 bg-card shadow-header">
+    <header className="z-sticky sticky top-0 border-b border-teal/15 bg-card shadow-header">
       <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-6 lg:h-20 lg:px-8">
         <Link
           href="/"
-          className="rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+          className="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 sm:gap-3.5"
         >
-          <span className="block font-serif text-lg font-semibold leading-tight text-foreground sm:text-xl lg:text-[1.375rem]">
-            {site.name}
-          </span>
-          <span className="mt-0.5 block text-xs font-medium text-teal sm:text-sm">
-            Federal advisory
+          <Image
+            src="/pazant-consulting.png"
+            alt=""
+            width={44}
+            height={44}
+            className="h-9 w-9 shrink-0 object-contain sm:h-10 sm:w-10"
+            priority
+          />
+          <span>
+            <span className="block font-serif text-lg font-semibold leading-tight text-foreground sm:text-xl lg:text-[1.375rem]">
+              {site.name}
+            </span>
+            <span className="mt-0.5 block text-xs font-medium text-teal sm:text-sm">
+              {site.headerLabel}
+            </span>
           </span>
         </Link>
 

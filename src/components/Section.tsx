@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-type SectionBand = "default" | "teal" | "surface";
+type SectionBand = "default" | "teal" | "teal-strong" | "surface";
 type SectionSize = "default" | "compact" | "spacious" | "cta";
 
 interface SectionProps {
@@ -50,12 +50,12 @@ export default function Section({
     <section
       id={id}
       className={cn(
-        "reveal-in",
         sectionSizeClasses[size],
         viewport && "section-viewport",
         snap && "snap-start",
         dark && "section-dark",
         band === "teal" && "band-teal",
+        band === "teal-strong" && "band-teal-strong",
         band === "surface" && "band-surface",
         className
       )}
@@ -77,7 +77,7 @@ export default function Section({
               <>
                 <h2
                   className={cn(
-                    "text-balance font-serif text-[clamp(1.625rem,3vw,2.375rem)] font-semibold leading-tight tracking-[-0.02em]",
+                    "text-balance font-serif text-[clamp(1.75rem,3.25vw,2.5rem)] font-semibold leading-tight tracking-[-0.02em]",
                     dark ? "text-white" : "text-foreground"
                   )}
                 >
@@ -85,8 +85,9 @@ export default function Section({
                 </h2>
                 <div
                   className={cn(
-                    "mt-3 h-1 w-12 rounded-sm",
-                    dark ? "bg-brand-gold-light" : "bg-brand-gold"
+                    "section-rule",
+                    !dark && "section-rule-teal",
+                    dark && "bg-brand-gold-light"
                   )}
                   aria-hidden
                 />

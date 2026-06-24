@@ -1,31 +1,32 @@
 interface ApproachPillarsProps {
-  items: { label: string; desc: string }[];
+  subtitle: string;
+  pillars: { label: string; desc: string }[];
+  closing: string;
 }
 
-export default function ApproachPillars({ items }: ApproachPillarsProps) {
-  const [featured, ...rest] = items;
-
+export default function ApproachPillars({ subtitle, pillars, closing }: ApproachPillarsProps) {
   return (
-    <div className="grid gap-10 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-12">
-      <div className="lg:pr-6">
-        <p className="font-serif text-[clamp(1.625rem,2.75vw,2.25rem)] font-semibold leading-snug text-foreground">
-          {featured.label}
-        </p>
-        <p className="mt-5 text-lg leading-relaxed text-muted-foreground md:leading-[1.7]">
-          {featured.desc}
-        </p>
-      </div>
+    <div className="space-y-12">
+      <p className="max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg md:leading-[1.75]">
+        {subtitle}
+      </p>
 
-      <div className="grid gap-8 sm:grid-cols-2">
-        {rest.map((item) => (
-          <div key={item.label} className="border-t border-border pt-6">
-            <h3 className="text-lg font-semibold text-foreground">{item.label}</h3>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              {item.desc}
+      <div className="pillar-grid grid sm:grid-cols-2 lg:grid-cols-3">
+        {pillars.map((pillar) => (
+          <div key={pillar.label} className="pillar-block">
+            <h3 className="font-serif text-lg font-semibold leading-snug text-foreground md:text-xl">
+              {pillar.label}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-[0.9375rem] md:leading-[1.65]">
+              {pillar.desc}
             </p>
           </div>
         ))}
       </div>
+
+      <p className="max-w-2xl pt-2 text-pretty text-base leading-relaxed text-foreground md:text-lg">
+        {closing}
+      </p>
     </div>
   );
 }

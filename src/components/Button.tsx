@@ -36,7 +36,7 @@ export default function Button({
       href={href}
       className={cn(
         buttonVariants({ variant: variantMap[variant], size: "lg" }),
-        "h-12 px-7 text-sm font-semibold transition-colors duration-200",
+        "h-12 px-7 text-sm font-semibold btn-motion",
         "focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
         className
       )}
