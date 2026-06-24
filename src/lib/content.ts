@@ -35,6 +35,7 @@ export const homeWhatWeDo = {
   title: "We Strengthen the Systems Behind Organizational Performance",
   subtitle:
     "Pazant Consulting Services helps mission-driven organizations build the governance, operating models, and institutional readiness required to perform, adapt, and grow in environments defined by complexity and accountability.",
+  groundedInLabel: "Our work is grounded in:",
   groundedIn: [
     "Director-level organizational effectiveness and operating-model leadership",
     "Senior federal advisory experience",
@@ -123,23 +124,15 @@ export const homeWhoWeServe = {
 };
 
 export const homeWhyClients = {
-  title: "Why clients choose this advisory",
-  pillars: [
-    {
-      title: "Institutional depth",
-      description:
-        "Governance-forward practice grounded in organizational effectiveness, federal advisory experience, and prime-contractor environments.",
-    },
-    {
-      title: "Executive partnership",
-      description:
-        "Selective, high-trust engagements that bring clarity to complexity and steady support through structural change.",
-    },
-    {
-      title: "Future-ready readiness",
-      description:
-        "Systems-minded advisory strengthened by MIT Sloan & CSAIL-informed AI governance insight.",
-    },
+  title: "Advisory That Strengthens Institutional Maturity",
+  reasons: [
+    "Governance-forward advisory grounded in organizational effectiveness",
+    "Executive-level clarity for leaders navigating complexity",
+    "Federal, prime-contractor, and institutional experience",
+    "Systems-minded approach that reduces risk and strengthens readiness",
+    "Steady, grounded advisory presence during periods of change",
+    "Selective, high-trust engagements with senior leadership teams",
+    "AI governance insight informed by MIT Sloan & CSAIL training",
   ],
 };
 
@@ -186,11 +179,11 @@ export const aboutNarrative = {
     },
     {
       label: "Beyond project execution",
-      text: "Unlike project-focused approaches that center on timelines and deliverables, my work addresses the deeper systems that shape how decisions are made, how teams coordinate, and how organizations adapt. Drawing on experience across federal agencies, prime-contractor environments, and organizational effectiveness leadership, I partner with leaders to build structures that bring coherence, clarity, and stability during change.",
+      text: "Unlike project-focused approaches that center on timelines and deliverables, my work addresses the deeper systems that shape how decisions are made, how teams coordinate, and how organizations adapt. Drawing on experience across federal agencies, prime-contractor environments, and organizational effectiveness leadership, I partner with leaders to build the structures that allow people to do their best work — structures that bring coherence to cross-functional efforts, clarity to decision-making, and stability during periods of change.",
     },
     {
       label: "Governance-forward and future-ready",
-      text: "Through a governance-forward, systems-minded approach, I help organizations create the conditions for sustainable performance — and build the AI governance and institutional maturity required to operate responsibly and adapt with agility.",
+      text: "Through a governance-forward, systems-minded approach, I help organizations create the conditions for sustainable performance: operating models that support accountability, rhythms that reinforce alignment, and decision pathways that reduce friction and strengthen trust. And as organizations prepare for an AI-enabled future, I help them build the AI governance and institutional maturity required to operate responsibly and adapt with agility.",
     },
     {
       label: "Steady, human-centered partnership",
@@ -204,12 +197,12 @@ export const founderBio = {
   imageCaption: "Alecia Pazant Hall, founder of Pazant Consulting Services.",
   paragraphs: [
     "Alecia Pazant is a governance-forward organizational effectiveness and strategic operations leader who helps mission-driven institutions strengthen the systems that shape how work gets done. With experience spanning federal agencies, prime-contractor environments, and complex research and nonprofit settings, she brings a rare ability to diagnose structural gaps, redesign operating models, and advise executives through periods of growth, complexity, and institutional change.",
-    "Her work centers on the disciplines that sit above project execution — governance, decision pathways, operating-model design, cross-functional alignment, and institutional readiness.",
+    "Her work centers on the disciplines that sit above project execution — governance, decision pathways, operating-model design, cross-functional alignment, and institutional readiness. She is known for a systems-minded approach that brings clarity to ambiguity, coherence to cross-functional work, and stability to organizations navigating high-stakes transitions.",
+    "Alecia's background includes senior federal advisory experience, service as a Presidential Appointee at the U.S. Small Business Administration, and more than a decade supporting major federal prime contractors in governance, compliance, and subcontracting environments. She also holds an Executive Certificate in Artificial Intelligence: Implications for Business Strategy from MIT Sloan and MIT CSAIL, grounding her advisory in emerging AI governance and institutional accountability expectations.",
     "Across her career, she has helped organizations build the maturity required to perform, adapt, and lead with confidence — strengthening governance, improving decision-making, and designing the operating structures that enable sustainable performance.",
   ],
   credentials: [
-    "Senior federal advisory experience; Presidential Appointee, U.S. Small Business Administration",
-    "More than a decade supporting major federal prime contractors in governance and compliance",
+    "Presidential Appointee, U.S. Small Business Administration",
     "Executive Certificate in AI Strategy — MIT Sloan & MIT CSAIL",
   ],
   focusAreas: [
@@ -224,6 +217,7 @@ export const aboutApproach = {
   title: "A Different Kind of Advisory Practice",
   subtitle:
     "Pazant Consulting is intentionally selective. We work with organizations that value structure, clarity, and governance, and who want advisory that elevates their institutional maturity.",
+  approachLead: "Our approach is:",
   pillars: [
     { label: "Strategic", desc: "Grounded in federal, institutional, and organizational realities" },
     { label: "Governance-forward", desc: "Focused on systems, not shortcuts" },
@@ -266,7 +260,7 @@ export const servicesIntro = {
   lead:
     "Organizations often try to solve structural challenges with project-focused solutions — adding more plans, more reporting, or more execution oversight. These approaches are valuable, but they are designed to manage work, not to strengthen the systems that shape how work gets done.",
   pivot: "Our services operate at a different level.",
-  body: "We help mission-driven organizations build the governance, operating models, and institutional maturity required to navigate complexity, improve decision-making, and create coherence across teams and functions — especially in environments facing increased compliance expectations and AI-enabled change.",
+  body: "We help mission-driven organizations build the governance, operating models, and institutional maturity required to navigate complexity, improve decision-making, and create coherence across teams and functions. Our work strengthens the structures that support accountability, alignment, and readiness, especially in environments facing increased compliance expectations and AI-enabled change.",
 };
 
 export const institutionalServices = [

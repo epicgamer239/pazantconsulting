@@ -19,7 +19,7 @@ export default function ServicesPage() {
         <Button href="/contact#consultation">Book a Consultation</Button>
       </PageIntro>
 
-      <Section band="teal-strong" title="How our advisory differs">
+      <Section band="teal-strong">
         <ServicesIntroPanels />
       </Section>
 

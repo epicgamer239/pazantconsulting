@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Button from "@/components/Button";
 import ComparisonSection from "@/components/ComparisonSection";
-import AudienceAndProofSection from "@/components/home/AudienceAndProofSection";
+import WhoWeServeSection from "@/components/home/WhoWeServeSection";
+import WhyClientsSection from "@/components/home/WhyClientsSection";
 import Hero from "@/components/Hero";
 import WhatWeDoLayout from "@/components/home/WhatWeDoLayout";
 import Section from "@/components/Section";
@@ -12,6 +13,7 @@ import {
   homeHero,
   homeWhatWeDo,
   homeWhoWeServe,
+  homeWhyClients,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -48,7 +50,11 @@ export default function HomePage() {
       </Section>
 
       <Section title={homeWhoWeServe.title}>
-        <AudienceAndProofSection />
+        <WhoWeServeSection />
+      </Section>
+
+      <Section band="surface" title={homeWhyClients.title}>
+        <WhyClientsSection />
       </Section>
 
       <Section dark size="cta" title={homeFinalCta.title} subtitle={homeFinalCta.subtitle}>

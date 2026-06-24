@@ -4,8 +4,8 @@ import { site, founderBio } from "@/lib/content";
 export default function FounderBio() {
   return (
     <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
-      <div className="overflow-hidden rounded-lg border border-border">
-        <div className="relative aspect-[4/5] min-h-[280px]">
+      <div className="self-start overflow-hidden rounded-lg border border-border">
+        <div className="relative aspect-[4/5] w-full min-h-[280px] max-w-md">
           <Image
             src={site.founderImageSrc}
             alt={`${founderBio.title}, founder of ${site.name}`}
@@ -14,7 +14,7 @@ export default function FounderBio() {
             sizes="(max-width: 1024px) 90vw, 40vw"
           />
         </div>
-        <p className="border-t border-border bg-surface px-5 py-4 text-sm leading-relaxed text-muted-foreground md:px-6">
+        <p className="bg-surface px-5 py-4 text-sm leading-relaxed text-muted-foreground md:px-6">
           {founderBio.imageCaption}
         </p>
       </div>

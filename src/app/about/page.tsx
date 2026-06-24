@@ -29,17 +29,18 @@ export default function AboutPage() {
         <AboutIntroLayout />
       </Section>
 
-      <Section band="teal" title="Narrative positioning">
+      <Section band="teal" title="Narrative Positioning Statement">
         <NarrativeTimeline />
       </Section>
 
-      <Section id="founder" title="Founder bio">
+      <Section id="founder" title="Founder Bio">
         <FounderBio />
       </Section>
 
       <Section band="surface" title={aboutApproach.title}>
         <ApproachPillars
           subtitle={aboutApproach.subtitle}
+          approachLead={aboutApproach.approachLead}
           pillars={aboutApproach.pillars}
           closing={aboutApproach.closing}
         />

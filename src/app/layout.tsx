@@ -25,10 +25,6 @@ export const metadata: Metadata = {
   },
   description:
     "Governance-forward advisory for mission-driven organizations. Strengthening operating structures, decision-making systems, and institutional readiness.",
-  icons: {
-    icon: "/pazant-consulting.png",
-    apple: "/pazant-consulting.png",
-  },
 };
 
 export default function RootLayout({

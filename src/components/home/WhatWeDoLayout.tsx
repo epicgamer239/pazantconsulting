@@ -8,7 +8,8 @@ export default function WhatWeDoLayout() {
         <p className="text-pretty text-base leading-relaxed text-muted-foreground md:text-lg md:leading-[1.75]">
           {homeWhatWeDo.subtitle}
         </p>
-        <ul className="mt-8 space-y-3 border-t border-foreground/15 pt-8">
+        <p className="text-sm font-semibold text-muted-foreground">{homeWhatWeDo.groundedInLabel}</p>
+        <ul className="mt-4 space-y-3">
           {homeWhatWeDo.groundedIn.map((item) => (
             <li
               key={item}

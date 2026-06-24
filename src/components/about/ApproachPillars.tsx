@@ -1,17 +1,25 @@
 interface ApproachPillarsProps {
   subtitle: string;
+  approachLead: string;
   pillars: { label: string; desc: string }[];
   closing: string;
 }
 
-export default function ApproachPillars({ subtitle, pillars, closing }: ApproachPillarsProps) {
+export default function ApproachPillars({
+  subtitle,
+  approachLead,
+  pillars,
+  closing,
+}: ApproachPillarsProps) {
   return (
     <div className="space-y-12">
       <p className="max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg md:leading-[1.75]">
         {subtitle}
       </p>
 
-      <div className="pillar-grid grid sm:grid-cols-2 lg:grid-cols-3">
+      <div>
+        <p className="text-sm font-semibold text-muted-foreground">{approachLead}</p>
+        <div className="pillar-grid mt-6 grid sm:grid-cols-2 lg:grid-cols-3">
         {pillars.map((pillar) => (
           <div key={pillar.label} className="pillar-block">
             <h3 className="font-serif text-lg font-semibold leading-snug text-foreground md:text-xl">
@@ -22,6 +30,7 @@ export default function ApproachPillars({ subtitle, pillars, closing }: Approach
             </p>
           </div>
         ))}
+        </div>
       </div>
 
       <p className="max-w-2xl pt-2 text-pretty text-base leading-relaxed text-foreground md:text-lg">
